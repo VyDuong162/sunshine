@@ -24,7 +24,6 @@ class CreateCuscChudeSanphamTable extends Migration
         });
         DB::statement("ALTER TABLE `cusc_chude_sanpham` comment 'Chủ đề sản phẩm # Sản phầm thuộc các chủ đề'");
     }
-    }
 
     /**
      * Reverse the migrations.

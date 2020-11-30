@@ -43,18 +43,6 @@ class CreateCuscHoadonsiTable extends Migration
      *
      * @return void
      */
-    public function down() {
-        Schema::drop('cusc_hoadonsi');
-    }
-}
-
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('cusc_hoadonsi');

@@ -25,19 +25,6 @@ class CreateCuscMauSanphamTable extends Migration
         });
         DB::statement("ALTER TABLE `cusc_mau_sanpham` comment 'Số lượng sản phẩm theo màu # Số lượng sản phẩm tương ứng với các màu'");
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down() {
-        Schema::drop('cusc_mau_sanpham');
-    }
-}
-
-    }
-
     /**
      * Reverse the migrations.
      *
