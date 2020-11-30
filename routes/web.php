@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+// route Hiển thị màn hình hello
+Route::get('/hello', 'ExampleController@hello')->name('example.hello');
+Route::get('/index', 'ExampleController@index')->name('example.index');
