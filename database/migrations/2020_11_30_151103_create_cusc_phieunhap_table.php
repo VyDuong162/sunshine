@@ -30,7 +30,6 @@ class CreateCuscPhieunhapTable extends Migration
             $table->timestamp('pn_capNhat')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('Thời điểm cập nhật # Thời điểm cập nhật phiếu nhập gần nhất');
             $table->tinyInteger('pn_trangThai')->default('2')->comment('Trạng thái # Trạng thái phiếu nhập sản phẩm: 1-khóa, 2-lập phiếu, 3-thanh toán, 4-nhập kho');
             $table->unsignedSmallInteger('ncc_ma')->comment('Nhà cung cấp # ncc_ma # ncc_ten # Mã nhà cung cấp');
-            
             $table->unique(['pn_soHoaDon']);
             $table->foreign('ncc_ma')->references('ncc_ma')->on('cusc_nhacungcap')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->foreign('nv_keToan')->references('nv_ma')->on('cusc_nhanvien')->onDelete('CASCADE')->onUpdate('CASCADE');
@@ -39,19 +38,6 @@ class CreateCuscPhieunhapTable extends Migration
         });
         DB::statement("ALTER TABLE `cusc_phieunhap` comment 'Phiếu nhập # Phiếu nhập'");
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down() {
-        Schema::drop('cusc_phieunhap');
-    }
-}
-
-    }
-
     /**
      * Reverse the migrations.
      *

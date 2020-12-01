@@ -15,7 +15,7 @@ class CreateCuscSanphamTable extends Migration
     {
         Schema::create('cusc_sanpham', function (Blueprint $table) {
             $table->engine = 'InNoDB';
-            $table->bigInteger('sp_ma')->autoIncrement()->comment('Ma san pham');
+            $table->bigInteger('sp_ma')->autoIncrement('sp_ma')->comment('Ma san pham');
             $table->string('sp_ten',200)->comment('ten san pham');
             $table->unsignedInteger('sp_giaGoc')->default('0')->comment('Giá gốc # Giá gốc của sản phẩm');
             $table->unsignedInteger('sp_giaBan')->default('0')->comment('Giá bán # Giá bán hiện tại của sản phẩm');

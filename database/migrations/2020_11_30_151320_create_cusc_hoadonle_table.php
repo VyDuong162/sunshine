@@ -20,7 +20,7 @@ class CreateCuscHoadonleTable extends Migration
             $table->string('hdl_dienThoai', 11)->comment('Điện thoại # Điện thoại');
             $table->string('hdl_diaChi', 250)->comment('Địa chỉ # Địa chỉ');
             $table->unsignedSmallInteger('nv_lapHoaDon')->comment('Lập hóa đơn # nv_ma # nv_hoTen # Mã nhân viên (người lập hóa đơn)');
-            $table->dateTime('hdl_ngayXuatHoaDon')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('Thời điểm xuất # Thời điểm xuất hóa đơn');
+            $table->datetime('hdl_ngayXuatHoaDon')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('Thời điểm xuất # Thời điểm xuất hóa đơn');
             $table->unsignedBigInteger('dh_ma')->default('1')->comment('Đơn hàng # dh_ma # dh_ma # Mã đơn hàng, 1-Không xuất hóa đơn');
             
             $table->foreign('dh_ma')->references('dh_ma')->on('cusc_donhang')->onDelete('CASCADE')->onUpdate('CASCADE');

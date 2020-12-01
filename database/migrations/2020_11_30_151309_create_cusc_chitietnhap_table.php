@@ -28,19 +28,6 @@ class CreateCuscChitietnhapTable extends Migration
         });
         DB::statement("ALTER TABLE `cusc_chitietnhap` comment 'Chi tiết nhập # Chi tiết phiếu nhập: sản phẩm, màu, số lượng, đơn giá, phiếu nhập'");
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down() {
-        Schema::drop('cusc_chitietnhap');
-    }
-}
-
-    }
-
     /**
      * Reverse the migrations.
      *
