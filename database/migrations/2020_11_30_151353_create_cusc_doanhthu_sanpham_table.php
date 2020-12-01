@@ -19,7 +19,7 @@ class CreateCuscDoanhthuSanphamTable extends Migration
             $table->unsignedBigInteger('sp_ma');
             $table->decimal('giatri');
             $table->timestamps();
-
+            
             $table->foreign('sp_ma')->references('sp_ma')->on('cusc_sanpham')->onDelete('CASCADE')->onUpdate('CASCADE');
         });
     }
