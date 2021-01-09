@@ -6,7 +6,7 @@ Loai San Pham
 @section('content')
     @if(Session::has('alert-success'))
     <div class="alert alert-success">
-        {{ Session::get('alert-success') }}
+        {{ Session::get('alert') }}
     </div>
     @endif
 <a href="{{ route('backend.Loai.create') }}" class="btn btn-primary">Them moi</a>

@@ -29,4 +29,15 @@ Route::post('backend/Loai/store','backend\LoaiController@store')->name('backend.
 Route::get('backend/Loai/edit/{id}','backend\LoaiController@edit')->name('backend.Loai.edit');
 Route::put('backend/Loai/update/{id}','backend\LoaiController@update')->name('backend.Loai.update');
 Route::delete('backend/Loai/delete/{id}','backend\LoaiController@destroy')->name('backend.Loai.destroy');
+Route::get('/backend/sanpham/print', 'backend\SanPhamController@print')->name('backend.sanpham.print');
+Route::get('/backend/sanpham/excel', 'backend\SanPhamController@excel')->name('backend.sanpham.excel');
+Route::get('/backend/sanpham/pdf', 'backend\SanPhamController@pdf')->name('backend.sanpham.pdf');
 Route::resource('backend/sanpham','backend\SanPhamController',['as'=>'backend']);
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/testmatkhau',function(){
+    return bcrypt('12345');
+});

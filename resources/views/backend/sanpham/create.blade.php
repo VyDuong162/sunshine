@@ -61,6 +61,12 @@ Them San Pham
       <option value="2">Khả dụng</option>
     </select>
   </div>
+  <div class="form-group">
+    <div class="file-loading">
+      <label>Hình ảnh liên quan sản phẩm</label>
+      <input id="sp_hinhanhlienquan" type="file" name="sp_hinhanhlienquan[]" multiple>
+    </div>
+  </div>
   <button type="submit" class="btn btn-primary">Lưu</button>
 </form>
 @endsection
