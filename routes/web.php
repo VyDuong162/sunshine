@@ -17,6 +17,8 @@ Route::get('/', function () {
 // route Hiển thị màn hình hello
 Route::get('/hello', 'ExampleController@hello')->name('example.hello');
 Route::get('/index', 'ExampleController@index')->name('example.index');
+// route hiển thị màn hình Danh sách nhân viên
+Route::get('/hoctap/danhsachnhanvien', 'ExampleController@danhsachnhanvien')->name('example.danhsachnhanvien');
 Route::get('/testdanhsachloai','LoaiController@getDanhSachLoai');
 Route::get('/testdanhsachmau','MauController@getDanhSachMau');
 Route::get('/testdanhsachsanpham','LoaiController@getDanhSachSanPham');
@@ -41,3 +43,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/testmatkhau',function(){
     return bcrypt('12345');
 });
+Route::get('/', 'Frontend\FrontendController@index')->name('frontend.home');
+Route::get('setLocale/{locale}', function ($locale) {
+    if (in_array($locale, Config::get('app.locales'))) {
+      Session::put('locale', $locale);
+    }
+    return redirect()->back();
+})->name('app.setLocale');
