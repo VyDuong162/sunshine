@@ -21,6 +21,7 @@ class LoaiController extends Controller
         $danhsachloai= Loai::paginate(3);
         return view('backend.Loai.index')
         ->with('dsloai',$danhsachloai);
+         
     }
 
     /**

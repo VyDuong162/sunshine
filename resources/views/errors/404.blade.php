@@ -18,7 +18,7 @@ Shop Hoa tươi - Sunshine
             <h2 class="headline text-yellow"> 404</h2>
 
             <div class="error-content">
-                <h3><i class="fa fa-warning text-yellow"></i> Xin lỗi, trang không tìm thấy</h3>
+                <h3><i class="fa fa-warning text-yellow"></i> Xin lỗi, trang không tìm thấy </h3>
 
                 <p>
                     Chúng tôi đã cố gắng tìm, nhưng không thấy trang bạn yêu cầu. Bạn có thể <a href="{{ route('frontend.home') }}">quay về Trang chủ</a> và xem tiếp các sản phẩm khác của chúng tôi!

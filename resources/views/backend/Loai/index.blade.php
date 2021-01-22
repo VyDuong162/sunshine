@@ -24,7 +24,7 @@ Loai San Pham
     </thead>
     <tbody>
         <?php
-            $stt =1; 
+            $stt =1;  
         ?>
         @foreach($dsloai as $loai)
         <tr> 
