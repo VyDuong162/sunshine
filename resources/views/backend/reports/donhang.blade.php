@@ -12,6 +12,7 @@ Báo cáo Đơn hàng
 Báo cáo Đơn hàng
 @endsection
 
+<<<<<<< HEAD
 @section('custom-css')
 <!-- Các style dành cho thư viện Daterangepicker -->
 <link href="{{ asset('vendor/daterangepicker/daterangepicker.css') }}" type="text/css" rel="stylesheet" />
@@ -24,11 +25,14 @@ Báo cáo Đơn hàng
 </style>
 @endsection
 
+=======
+>>>>>>> 95db74eb0224c620f47e2289a087c4d262299bcf
 @section('content')
 <div class="row">
     <div class="col-md-12">
         <form method="get" action="#" enctype="multipart/form-data">
             {{ csrf_field() }}
+<<<<<<< HEAD
             <div class="form-group">
                 <label for="thoigianLapBaoCao">Thời gian lập báo cáo</label>
                 <input type="text" class="form-control" id="thoigianLapBaoCao">
@@ -41,6 +45,21 @@ Báo cáo Đơn hàng
             <div class="form-group" style="display: none;">
                 <label for="denNgay">Đến ngày</label>
                 <input type="text" class="form-control" id="denNgay" name="denNgay">
+=======
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group ">
+                        <label for="tuNgay">Từ ngày</label>
+                        <input type="text" class="form-control" id="tuNgay" name="tuNgay">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="denNgay">Đến ngày</label>
+                        <input type="text" class="form-control" id="denNgay" name="denNgay">
+                    </div>
+                </div>
+>>>>>>> 95db74eb0224c620f47e2289a087c4d262299bcf
             </div>
             <button type="submit" class="btn btn-primary" id="btnLapBaoCao">Lập báo cáo</button>
         </form>
@@ -52,6 +71,7 @@ Báo cáo Đơn hàng
 @endsection
 
 @section('custom-scripts')
+<<<<<<< HEAD
 <!-- Các script dành cho thư viện Daterangepicker -->
 <script type="text/javascript" src="{{ asset('vendor/momentjs/moment.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('vendor/daterangepicker/daterangepicker.min.js') }}"></script>
@@ -117,6 +137,8 @@ Báo cáo Đơn hàng
     });
 </script>
 
+=======
+>>>>>>> 95db74eb0224c620f47e2289a087c4d262299bcf
 <!-- Các script dành cho thư viện Numeraljs -->
 <script src="{{ asset('vendor/numeraljs/numeral.min.js') }}"></script>
 <script>
@@ -145,7 +167,11 @@ Báo cáo Đơn hàng
 </script>
 
 <!-- Các script dành cho thư viện ChartJS -->
+<<<<<<< HEAD
 <script src="{{ asset('vendor/Chart.js/Chart.min.js') }}"></script>
+=======
+<script src="{{ asset('vendor/chart.js/Chart.min.js') }}"></script>
+>>>>>>> 95db74eb0224c620f47e2289a087c4d262299bcf
 <script>
     $(document).ready(function() {
         var objChart;
@@ -154,7 +180,11 @@ Báo cáo Đơn hàng
         $("#btnLapBaoCao").click(function(e) {
             e.preventDefault();
             $.ajax({
+<<<<<<< HEAD
                 url: "{{ route('backend.baocao.donhangData') }}",
+=======
+                url: '{{ route('backend.baocao.donhangData') }}',
+>>>>>>> 95db74eb0224c620f47e2289a087c4d262299bcf
                 type: "GET",
                 data: {
                     tuNgay: $('#tuNgay').val(),
@@ -164,7 +194,11 @@ Báo cáo Đơn hàng
                     var myLabels = [];
                     var myData = [];
                     $(response.data).each(function() {
+<<<<<<< HEAD
                         myLabels.push(moment(this.thoiGian).format('DD/MM/YYYY'));
+=======
+                        myLabels.push((this.thoiGian));
+>>>>>>> 95db74eb0224c620f47e2289a087c4d262299bcf
                         myData.push(this.tongThanhTien);
                     });
                     myData.push(0); // creates a '0' index on the graph
@@ -215,6 +249,16 @@ Báo cáo Đơn hàng
                                     }
                                 }]
                             },
+<<<<<<< HEAD
+=======
+                            tooltips: {
+                                callbacks: {
+                                    label: function(tooltipItem, data) {
+                                        return numeral(tooltipItem.value).format('0,0 $')
+                                    }
+                                }
+                            },
+>>>>>>> 95db74eb0224c620f47e2289a087c4d262299bcf
                             responsive: true,
                             maintainAspectRatio: false,
                         }
