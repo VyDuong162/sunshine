@@ -12,31 +12,38 @@ Loai San Pham
 <a href="{{ route('backend.Loai.create') }}" class="btn btn-primary">Them moi</a>
 <h1>Danh sach loai</h1>
 <table border="1" width="100%">
-    <tr>
-        <th>Mã loại</th>
-        <th>Tên loại</th>
-        <th>Ngày tạo</th>
-        <th>Ngày cập nhật</th>
-        <th>Trạng thái</th>
-        <th>Chức năng</th>
-    </tr>
-    @foreach($dsloai as $loai)
-    <tr>
-        <td>{{$loai->l_ma}}</td>
-        <td>{{$loai->l_ten}}</td>
-        <td>{{$loai->l_taoMoi}}</td>
-        <td>{{$loai->l_capNhat}}</td>
-        <td>
-            <?php
-                $trangthailoai='';
-                if($loai->l_trangThai==2){
-                    $trangthailoai= 'còn bán';
-                }
-                else
-                $trangthailoai= 'khóa';
-            ?>
-            {{ $trangthailoai }}
-        </td>
+    <thead>
+        <tr>
+            <th>Mã loại</th>
+            <th>Tên loại</th>
+            <th>Ngày tạo</th>
+            <th>Ngày cập nhật</th>
+            <th>Trạng thái</th>
+            <th>Chức năng</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+            $stt =1; 
+        ?>
+        @foreach($dsloai as $loai)
+        <tr> 
+            <td>{{$loai->l_ma}}</td>
+            <td>{{$loai->l_ten}}</td>
+            <td>{{$loai->l_taoMoi}}</td>
+            <td>{{$loai->l_capNhat}}</td>
+            <td>
+                <?php
+                    $trangthailoai='';
+                    if($loai->l_trangThai==2){
+                        $trangthailoai= 'còn bán';
+                    }
+                    else
+                    $trangthailoai= 'khóa';
+                ?>
+                {{ $trangthailoai }}
+            </td>
+        
         <td><a href="{{ route('backend.Loai.edit',['id' => $loai->l_ma]) }}" class="btn btn-success">Sửa</a>
             <form name="frmdelete" id="frmdelete" class="frmdelete" action="{{ route('backend.Loai.destroy',['id' => $loai->l_ma]) }}" method="post"
                 data-id="{{$loai->l_ma}}">
@@ -46,8 +53,13 @@ Loai San Pham
             </form>
         </td>
     </tr>
+    <?php
+        $stt++;
+        ?>
     @endforeach
+    </tbody>
 </table>
+{{ $dsloai->links() }}
 @endsection
 @section('custom-scripts')
 <script>
