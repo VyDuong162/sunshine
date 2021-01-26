@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Controllers\Frontend\FrontendController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -50,6 +52,11 @@ Route::get('setLocale/{locale}', function ($locale) {
     }
     return redirect()->back();
 })->name('app.setLocale');
+Route::get('/lien-he', 'Frontend\FrontendController@contact')->name('frontend.contact');
+Route::post('/lien-he/goi-loi-nhan', 'Frontend\FrontendController@sendMailContactForm')->name('frontend.contact.sendMailContactForm');
 // Tạo route Báo cáo Đơn hàng
 Route::get('/admin/baocao/donhang', 'Backend\BaoCaoController@donhang')->name('backend.baocao.donhang');
 Route::get('/admin/baocao/donhang/data', 'Backend\BaoCaoController@donhangData')->name('backend.baocao.donhangData');
+
+//tao thong ke
+Route::get('/thongke', 'Frontend\FrontendController@thongke')->name('frontend.pages.thongke');
