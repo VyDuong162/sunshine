@@ -103,5 +103,5 @@ class NhanVienTableSeeder extends Seeder
             'q_ma'         => 2
         ]);
         DB::table('cusc_nhanvien')->insert($list);
-    }
+}
 }

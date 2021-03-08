@@ -15,7 +15,7 @@ class CreateTruyenTable extends Migration
     {
         Schema::create('truyen', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->INTIncrements('truyen_id');
+            $table->tinyIncrements('truyen_id');
             $table->string('truyen_ma)', 50);
             $table->string('truyen_ten', 256);
             $table->string('truyen_hinhdaidien', 100);

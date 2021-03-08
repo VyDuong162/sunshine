@@ -17,7 +17,7 @@ Them San Pham
     <input type="text" class="form-control" id="sp_ten" name="sp_ten" value="{{ old('sp_ten') }}">
   </div>
   <div class="form-group">
-      <label for="l_ma">Loại sản phẩm</label>
+      <label for="nv_ma">Loại sản phẩm</label>
       <select name="l_ma" class="form-control">
             @foreach($dsloai as $loai)
                 <option value="{{ $loai->l_ma }}">{{ $loai->l_ten }}</option>

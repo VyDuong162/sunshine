@@ -44,7 +44,7 @@ Loai San Pham
                 {{ $trangthailoai }}
             </td>
         
-        <td><a href="{{ route('backend.Loai.edit',['id' => $loai->l_ma]) }}" class="btn btn-success">Sửa</a>
+            <td><a href="{{ route('backend.Loai.edit',['id' => $loai->l_ma]) }}" class="btn btn-success">Sửa</a>
             <form name="frmdelete" id="frmdelete" class="frmdelete" action="{{ route('backend.Loai.destroy',['id' => $loai->l_ma]) }}" method="post"
                 data-id="{{$loai->l_ma}}">
                 {{ csrf_field() }}

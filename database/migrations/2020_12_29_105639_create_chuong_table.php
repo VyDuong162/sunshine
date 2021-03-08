@@ -15,7 +15,7 @@ class CreateChuongTable extends Migration
     {
         Schema::create('chuong', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->INTIncrements('chuong_id');
+            $table->tinyIncrements('chuong_id');
             $table->string('chuong_so)', 50);
             $table->string('chuong_ten', 256);
             $table->text('chuong_noidung');
